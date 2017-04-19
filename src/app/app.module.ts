@@ -4,17 +4,33 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ChatComponent } from './chat/chat.component';
+
+import {WebSocketService} from './websocket.service';
+import {ChatService} from './chat.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {AppRoutingModule} from './routing/app-rouitng.module';
+import { LobbyComponent } from './lobby/lobby.component';
+
+///<reference path="./Bar.ts"/>
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatComponent,
+    LobbyComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgbModule.forRoot(),
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    WebSocketService,
+    ChatService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
