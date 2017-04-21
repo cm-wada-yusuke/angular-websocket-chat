@@ -1,9 +1,17 @@
 export class ChatMessage {
 
+  userName: string;
+  text: string;
+  systemFlag: boolean;
+
   constructor(
-    private name: string,
-    private message: string,
-    private systemFlag: boolean
+    userName: string,
+    text: string,
+    systemFlag: boolean
   ) {
+    this.userName = userName;
+    this.text = text;
+    this.systemFlag = systemFlag;
   }
+
 }

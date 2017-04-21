@@ -1,9 +1,12 @@
 <div id="chat-component">
   <h4>Chat Service</h4>
-  <div><input #sendMessage />
-    <button (click)="send(sendMessage.value);">送信</button>
+  <div class="form-group form-inline"><input #sendMessage class="form-control">
+    <button class="btn btn-default" (click)="send(sendMessage.value);">送信</button>
   </div>
-  <ul class="list-group">
-    <li *ngFor="let msg of messages" class="list-group-item">{{msg}}</li>
+  <ul class="list-group row">
+    <li *ngFor="let msg of messages" class="list-group-item">
+      <div class="chat-face col-md-2"><img src="http://placehold.jp/24/{{msg.faceColor}}/FFF/100x100.png?text={{msg.userName}}"></div>
+      <div class="chat-area chat-hukidashi col-md-10" [ngClass]="msg.speaker"><span>{{msg.text}}</span></div>
+    </li>
   </ul>
 </div>

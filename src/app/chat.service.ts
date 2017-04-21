@@ -15,23 +15,20 @@ export class ChatService {
     return this.messages = <Subject<ChatMessage>>this.ws
       .connect(this.chatUrl(roomNumber, name))
       .map((response: MessageEvent): ChatMessage => {
-        const data = response.data as ChatMessage;
+        const data = JSON.parse(response.data) as ChatMessage;
         return data;
       });
   }
 
   private chatUrl(roomNumber: string, name: string): string {
-    return `ws://localhost:9000/chat/stream/${roomNumber}?user_name=${name}`;
+    return `ws://172.17.0.154:9000/chat/stream/${roomNumber}?user_name=${name}`;
   }
 
   send(name: string, message: string): void {
-    console.log(JSON.stringify(this.createMessage(name, message)));
     this.messages.next(this.createMessage(name, message));
   }
 
   private createMessage(name: string, message: string): ChatMessage {
-    const m = new ChatMessage(name, message, false);
-    console.log(JSON.stringify(m));
     return new ChatMessage(name, message, false);
   }
 
