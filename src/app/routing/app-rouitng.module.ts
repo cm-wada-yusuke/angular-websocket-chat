@@ -5,7 +5,7 @@ import {LobbyComponent} from '../lobby/lobby.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: './rooms', pathMatch: 'full'},
+  {path: '', redirectTo: '/rooms', pathMatch: 'full'},
   {path: 'rooms', component: LobbyComponent},
   {path: 'rooms/:roomNumber', component: ChatComponent}
 ]

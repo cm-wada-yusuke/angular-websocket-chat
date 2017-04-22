@@ -1,11 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
-import {Subject} from 'rxjs/Subject';
-import {ChatService} from '../chat.service';
 import {ActivatedRoute, Params} from '@angular/router';
-import {Location} from '@angular/common';
-import {ChatMessage} from './chat.message';
+import {ChatService} from '../chat.service';
 
 import {Md5} from 'ts-md5/dist/md5';
 
@@ -48,7 +43,6 @@ export class ChatComponent implements OnInit {
 
       const isMe = msg.userName === this.name;
 
-
       this.messages.push(new ChatModel(
         msg.userName,
         msg.text,
@@ -57,7 +51,7 @@ export class ChatComponent implements OnInit {
           me: isMe,
           someone: !isMe
         },
-        +(Md5.hashStr(msg.userName).toString().slice(0, 3)) % 778
+        parseInt((Md5.hashStr(encodeURIComponent(msg.userName)).toString().slice(6, 12)), 16) % 1000000
       ));
     });
   }

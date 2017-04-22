@@ -1,7 +1,7 @@
 <div id="chat-component">
   <h4>Chat Service</h4>
   <div class="form-group form-inline"><input #sendMessage class="form-control">
-    <button class="btn btn-default" (click)="send(sendMessage.value);">送信</button>
+    <button class="btn btn-default" (click)="send(sendMessage.value); sendMessage.value='';">送信</button>
   </div>
   <ul class="list-group row">
     <li *ngFor="let msg of messages" class="list-group-item">

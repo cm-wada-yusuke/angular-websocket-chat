@@ -8,6 +8,10 @@ export class ChatService {
 
   private messages: Subject<ChatMessage>;
 
+  private chatUrl(roomNumber: string, name: string): string {
+    return `ws://localhost:9000/chat/stream/${roomNumber}?user_name=${name}`;
+  }
+
   constructor(private ws: WebSocketService) {
   }
 
@@ -18,10 +22,6 @@ export class ChatService {
         const data = JSON.parse(response.data) as ChatMessage;
         return data;
       });
-  }
-
-  private chatUrl(roomNumber: string, name: string): string {
-    return `ws://172.17.0.154:9000/chat/stream/${roomNumber}?user_name=${name}`;
   }
 
   send(name: string, message: string): void {
