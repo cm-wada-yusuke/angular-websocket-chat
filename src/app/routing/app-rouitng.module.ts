@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/rooms', pathMatch: 'full'},
   {path: 'rooms', component: LobbyComponent},
   {path: 'rooms/:roomNumber', component: ChatComponent}
-]
+];
 
 @NgModule({
   imports: [

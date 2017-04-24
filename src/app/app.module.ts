@@ -11,6 +11,7 @@ import {ChatService} from './chat.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from './routing/app-rouitng.module';
 import { LobbyComponent } from './lobby/lobby.component';
+import {AppNgAutoScrollDirective} from '../lib/ng-auto-scroll';
 
 ///<reference path="./Bar.ts"/>
 
@@ -18,7 +19,8 @@ import { LobbyComponent } from './lobby/lobby.component';
   declarations: [
     AppComponent,
     ChatComponent,
-    LobbyComponent
+    LobbyComponent,
+    AppNgAutoScrollDirective
   ],
   imports: [
     BrowserModule,

@@ -51,9 +51,15 @@ export class ChatComponent implements OnInit {
           me: isMe,
           someone: !isMe
         },
-        parseInt((Md5.hashStr(encodeURIComponent(msg.userName)).toString().slice(6, 12)), 16) % 1000000
+        this.color6(msg.userName)
       ));
     });
+  }
+
+  private color6(key: string): string {
+    const hash6 = Md5.hashStr(encodeURIComponent(key)).toString().slice(6, 12);
+    const rgb = parseInt(hash6, 16) % 1000000;
+    return ('000000' + rgb).slice(-6);
   }
 
 }
@@ -64,9 +70,9 @@ class ChatModel {
   text: string;
   systemFlag: boolean;
   speaker: {};
-  faceColor: number;
+  faceColor: string;
 
-  constructor(userName: string, text: string, systemFlag: boolean, speaker: {}, faceColor: number) {
+  constructor(userName: string, text: string, systemFlag: boolean, speaker: {}, faceColor: string) {
     this.userName = userName;
     this.text = text;
     this.systemFlag = systemFlag;

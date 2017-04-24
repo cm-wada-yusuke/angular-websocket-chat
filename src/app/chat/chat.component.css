@@ -1,49 +1,37 @@
-/* チャットレイアウト */
 .chat-box {
+  height: 100%;
+  overflow-y: scroll;
   width: 100%;
-  height: auto;
-  overflow: hidden; /*floatの解除*/
-  margin-bottom: 20px;
+  position: relative;
 }
-.chat-face {
-  float: left;
-  margin-right: -120px;
-}
-.chat-face img{
+
+.face img {
   border-radius: 30px;
   border: 1px solid #ccc;
   box-shadow: 0 0 4px #ddd;
 }
-.chat-area {
-  width: 100%;
-  float: right;
-}
-.chat-hukidashi {
-  display: inline-block; /*コメントの文字数に合わせて可変*/
+
+.fukidashi {
+  display: inline-block;
   padding: 15px 20px;
-  margin-left: 120px;
-  margin-top: 8px;
-  /* border: 1px solid gray; ←削除 */
   border-radius: 10px;
-  position: relative; /*追記*/
   background-color: #D9F0FF; /*追記*/
 }
-/* ↓追記↓ */
-.chat-hukidashi:after {
-  content: "";
-  position: absolute;
-  top: 50%; left: -10px;
-  margin-top: -10px;
-  display: block;
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent #D9F0FF transparent transparent;
-}
+
 .someone {
   background-color: #BCF5A9;
 }
+
 .someone:after {
   border-color: transparent #BCF5A9 transparent transparent;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+  z-index: 1;
 }
