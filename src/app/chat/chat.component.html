@@ -1,18 +1,20 @@
-<div appNgAutoScroll class="container chat-box">
-  <ul class="list-group row chat-bo">
-    <li *ngFor="let msg of messages" class="list-group-item">
-      <div class="col-xs-2 face"><img
-        src="http://placehold.jp/24/{{msg.faceColor}}/FFF/100x100.png?text={{msg.userName}}"></div>
-      <div class="col-xs-1"></div>
-      <div class="col-xs-9 fukidashi" [ngClass]="msg.speaker"><span>{{msg.text}}</span></div>
-    </li>
-  </ul>
-</div>
-<div class="footer">
-  <div class="form-group container row">
-    <div class="col-sm-10"><input #sendMessage class="form-control"></div>
-    <div class="col-sm-2">
-      <button class="btn btn-default col-xs-10" (click)="send(sendMessage.value); sendMessage.value='';">送信</button>
+<div class="container">
+  <div appNgAutoScroll class="chat-box">
+    <ul class="list-group row">
+      <li *ngFor="let msg of messages" class="list-group-item">
+        <div class="col-xs-2 face"><img
+          src="http://placehold.jp/24/{{msg.faceColor}}/FFF/100x100.png?text={{msg.userName}}"></div>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-9 fukidashi" [ngClass]="msg.speaker"><span>{{msg.text}}</span></div>
+      </li>
+    </ul>
+  </div>
+  <div class="footer">
+    <div class="form-group row">
+      <div class="col-sm-10"><input #sendMessage class="form-control"></div>
+      <div class="col-sm-2">
+        <button class="btn btn-default col-xs-10" (click)="send(sendMessage.value); sendMessage.value='';">送信</button>
+      </div>
     </div>
   </div>
 </div>

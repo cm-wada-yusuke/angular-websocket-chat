@@ -1,8 +1,17 @@
+html, body {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  position: relative;
+}
+
 .chat-box {
   height: 100%;
   overflow-y: scroll;
-  width: 100%;
   position: relative;
+  padding-bottom: 140px;
 }
 
 .face img {
@@ -27,7 +36,7 @@
 }
 
 .footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
