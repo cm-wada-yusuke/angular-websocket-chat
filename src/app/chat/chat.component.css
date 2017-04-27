@@ -3,19 +3,23 @@ html, body {
 }
 
 .container {
-  height: 100%;
+  height:calc(100% - 60px);
   position: relative;
 }
 
 .chat-box {
-  height: 100%;
+  height: calc(100% - 120px);
   overflow-y: scroll;
   position: relative;
-  padding-bottom: 140px;
+  border: solid 1px #acacac;
+}
+
+.me {
+  background-color: aliceblue;
 }
 
 .face img {
-  border-radius: 30px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   box-shadow: 0 0 4px #ddd;
 }
@@ -23,24 +27,12 @@ html, body {
 .fukidashi {
   display: inline-block;
   padding: 15px 20px;
-  border-radius: 10px;
-  background-color: #D9F0FF; /*追記*/
+  background-color: transparent;
 }
 
-.someone {
-  background-color: #BCF5A9;
-}
-
-.someone:after {
-  border-color: transparent #BCF5A9 transparent transparent;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
-  z-index: 1;
+.send-box {
+  background-color: #ddd;
+  padding: 20px;
+  vertical-align: middle;
+  border: solid 1px #acacac;
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {ChatService} from '../chat.service';
 
@@ -8,7 +8,8 @@ import {Md5} from 'ts-md5/dist/md5';
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css'],
-  providers: [ChatService]
+  providers: [ChatService],
+  encapsulation: ViewEncapsulation.None
 })
 export class ChatComponent implements OnInit {
 
