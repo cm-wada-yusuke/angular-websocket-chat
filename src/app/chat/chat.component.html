@@ -11,7 +11,7 @@
   </div>
   <div class="send-box">
     <div class="row">
-      <div class="col-10"><input #sendMessage class="form-control"></div>
+      <div class="col-10"><input #sendMessage class="form-control" (keydown.meta.enter)="send(sendMessage.value); sendMessage.value='';"></div>
       <div class="col-2">
         <button class="btn btn-default" (click)="send(sendMessage.value); sendMessage.value='';">送信</button>
       </div>
