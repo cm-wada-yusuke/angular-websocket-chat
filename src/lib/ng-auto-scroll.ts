@@ -4,8 +4,8 @@ import {Directive, ElementRef, HostListener, AfterContentInit, Input, OnDestroy}
   selector: '[appNgAutoScroll]'
 })
 export class AppNgAutoScrollDirective implements AfterContentInit, OnDestroy {
-  @Input('lock-y-offset') lockYOffset = 10;
-  @Input('observe-attributes') observeAttributes = 'false';
+  @Input() lockYOffset = 10;
+  @Input() observeAttributes = 'false';
 
   private nativeElement: HTMLElement;
   private isLocked = false;

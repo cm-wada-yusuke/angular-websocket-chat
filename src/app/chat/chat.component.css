@@ -12,6 +12,7 @@ html, body {
   overflow-y: scroll;
   position: relative;
   border: solid 1px #acacac;
+  margin-top: 5 px;
 }
 
 .me {
