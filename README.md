@@ -1,5 +1,9 @@
 # AngularWebsocketChat
 
+Angular4 + RxJS(Subject) + WebSocket sample project.
+
+![image](http://cdn.dev.classmethod.jp/wp-content/uploads/2017/05/angular-chat.gif)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server
